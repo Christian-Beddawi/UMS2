@@ -8,7 +8,6 @@ public class InsertSessionTimeHandler :IRequestHandler<InsertSessionTimeCommand,
     private readonly umsContext _context = new umsContext();
     public async Task<string> Handle(InsertSessionTimeCommand request, CancellationToken cancellationToken)
     {
-        
         await _context.SaveChangesAsync();
         return "Session Added Successfully!!";
     }

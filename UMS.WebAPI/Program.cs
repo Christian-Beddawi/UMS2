@@ -4,14 +4,14 @@ using AutoMapper;
 using EmailServiceTools;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.AspNetCore.OData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OData.Edm;
 using Microsoft.OData.ModelBuilder;
+using UMS.Application.Common;
 using UMS.Application.Entities.Course.Commands.InsertCourse;
 using UMS.Domain.Models;
-using UMS.Infrastructure.Abstraction.EmailSenderInterface;
-using UMS.Infrastructure.EmailService;
 using UMS.Persistence;
 using UMS.WebAPI;
 //using ODataConventionModelBuilder = Microsoft.OData.Builder.ODataConventionModelBuilder;
@@ -37,6 +37,11 @@ builder.Services.AddMediatR(typeof(Program));
 builder.Services.AddMediatR(typeof(InsertCourseCommand).GetTypeInfo().Assembly);
 
 builder.Services.AddAutoMapper(typeof(Program));
+
+//Add common DI
+builder.Services.AddScoped<ICommonServices,CommonServices>();
+
+
 
 builder.Services
     .AddControllers()
@@ -81,7 +86,7 @@ var emailConfig = builder.Configuration
     .GetSection("EmailConfiguration")
     .Get<EmailConfiguration>();
 builder.Services.AddSingleton(emailConfig);
-builder.Services.AddScoped<IEmailSender, EmailSender>();
+
 
 //OData Configuration
 //builder.Services.AddControllers().AddOData(opt => opt.Select().Filter().Expand().OrderBy().SetMaxTop(null).Count());
