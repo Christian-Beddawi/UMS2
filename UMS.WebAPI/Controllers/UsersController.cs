@@ -2,6 +2,7 @@ using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using UMS.Application.ClassEnrollment.Commands;
+using UMS.Application.Entities.TeacherPerCoursePerSession.Commands;
 using UMS.WebAPI.DTO;
 
 namespace UMS.WebAPI.Controllers;
@@ -19,6 +20,13 @@ public class UsersController : ControllerBase
            _mapper = mapper;
        }
        
+       // Teacher to Course Registration
+       [HttpPost("RegisterToCourse")]
+       public async Task<IActionResult> InsertTeacherPerCourse([FromBody] RegisterToCourse regToCourse)
+       {
+           return Ok(await _mediator.Send(new RegisterTeacherToCourseCommand(regToCourse)));
+       }
+
        //POST
        [HttpPost("EnrollCourse")]
        public async Task<IActionResult> EnrollCourse([FromBody] EnrollClass enrollClass)

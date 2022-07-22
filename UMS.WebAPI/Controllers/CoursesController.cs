@@ -49,27 +49,4 @@ public class CoursesController : ControllerBase
         Course course = _mapper.Map<Course>(c);
         return Ok(await _mediator.Send(new InsertCourseCommand(course,userId)));
     }
-    
-    // Teacher to Course Registration
-    [HttpPost("RegisterToCourse")]
-    public async Task<IActionResult> InsertTeacherPerCourse([FromBody] RegisterToCourse regToCourse)
-    {
-        return Ok(await _mediator.Send(new RegisterTeacherToCourseCommand(regToCourse)));
-    }
-
-    /*
-    [HttpPost("SendEmail")]
-    public async Task<IActionResult> SendEmailTo([FromHeader] string address, string displayName, string subject, string content)
-    {
-        EmailAddress emailAddress = new EmailAddress() {Address = address, DisplayName = displayName};
-        EmailSend emailSend = new EmailSend(_emailSender);
-        return Ok(emailSend.SendEmail(emailAddress,subject,content));
-    }
-    */
-    
-    [HttpPost("EnrollCourse")]
-    public async Task<IActionResult> EnrollCourse([FromBody] EnrollClass enrollClass)
-    {
-        return Ok(await _mediator.Send(new EnrollClassCommand(enrollClass)));
-    }
 }

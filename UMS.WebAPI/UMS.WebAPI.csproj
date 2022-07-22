@@ -10,6 +10,7 @@
         <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
         <PackageReference Include="Keycloak.Net" Version="1.0.18" />
         <PackageReference Include="MediatR" Version="10.0.1" />
+        <PackageReference Include="Microsoft.AspNet.SignalR" Version="2.4.3" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.6" />
         <PackageReference Include="Microsoft.AspNetCore.OData" Version="8.0.3" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.6" />
@@ -30,10 +31,6 @@
       <ProjectReference Include="..\UMS.Domain\UMS.Domain.csproj" />
       <ProjectReference Include="..\UMS.Infrastructure.Abstraction\UMS.Infrastructure.Abstraction.csproj" />
       <ProjectReference Include="..\UMS.Infrastructure\UMS.Infrastructure.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Middlewares" />
     </ItemGroup>
 
 </Project>

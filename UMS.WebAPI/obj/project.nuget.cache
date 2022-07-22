@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OmSytzfRLjRYCSnqAkouOJCm9RW3uvFE0434pLA1iMPooapAMQs/9vv/MjGnYGYMMCWXsNhHaa/1Alv1eSjWRg==",
+  "dgSpecHash": "qazF63ckProIUJI3JkveZcdt7ZzkEn2Fot/DTWWLOeakt5s1Gtsj+eztl8YccvWiVym0Jr3Vw7RVJ9O0kFHQjg==",
   "success": true,
   "projectFilePath": "C:\\Users\\PC.LAPTOP-C29OTAM2\\RiderProjects\\UMS\\UMS.WebAPI\\UMS.WebAPI.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\PC.LAPTOP-C29OTAM2\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
     "C:\\Users\\PC.LAPTOP-C29OTAM2\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\PC.LAPTOP-C29OTAM2\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\10.0.1\\mediatr.extensions.microsoft.dependencyinjection.10.0.1.nupkg.sha512",
+    "C:\\Users\\PC.LAPTOP-C29OTAM2\\.nuget\\packages\\microsoft.aspnet.signalr\\2.4.3\\microsoft.aspnet.signalr.2.4.3.nupkg.sha512",
     "C:\\Users\\PC.LAPTOP-C29OTAM2\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.2\\microsoft.aspnet.webapi.client.5.2.2.nupkg.sha512",
     "C:\\Users\\PC.LAPTOP-C29OTAM2\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.2.2\\microsoft.aspnet.webapi.core.5.2.2.nupkg.sha512",
     "C:\\Users\\PC.LAPTOP-C29OTAM2\\.nuget\\packages\\microsoft.aspnet.webapi.odata\\5.7.0\\microsoft.aspnet.webapi.odata.5.7.0.nupkg.sha512",

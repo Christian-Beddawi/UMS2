@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.SignalR;
 using SignalRSwaggerGen.Attributes;
 
-namespace UMS.WebAPI.Notifications;
+namespace UMS.WebAPI.NotificationHub;
 
-public class SomeHub : Hub
+public class NotificationHub : Hub
 {
     public async Task SomeMethod(int arg1, object arg2, [SignalRHidden] CancellationToken cancellationToken = default)
     {

@@ -21,6 +21,8 @@ using UMS.Infrastructure.EmailSendingService;
 using UMS.Infrastructure.Settings;
 using UMS.Persistence;
 using UMS.WebAPI;
+using UMS.WebAPI.NotificationHub;
+
 //using ODataConventionModelBuilder = Microsoft.OData.Builder.ODataConventionModelBuilder;
 static IEdmModel GetEdmModel()
 {
@@ -51,7 +53,23 @@ builder.Services.AddAutoMapper(typeof(Program));
 //Add common DI
 builder.Services.AddScoped<ICommonServices,CommonServices>();
 
+//Multitenancy
+/*
+ //Multitenants
 
+//builder.Services.Configure<TenantSetings>(builder.Configuration.GetSection(nameof(TenantSetings)));
+//builder.Services.AddTransient<ITenantService, TenantService>();
+IConfiguration config = builder.Configuration;
+//builder.Services.AddAndMigrateTenantDatabases(config);
+
+static IEdmModel GetEdmModel()
+{
+    ODataConventionModelBuilder builder = new();
+    builder.EntitySet<User>("Users");
+    return builder.GetEdmModel();
+}
+ 
+ */
 
 builder.Services
     .AddControllers()
@@ -110,6 +128,8 @@ builder.Services.AddDbContext<umsContext>(
     options => options.UseNpgsql("Host=localhost;Port=5432;Database=ums;Username=postgres;Password=123456")
 );
 
+//SignalR
+builder.Services.AddSignalR();
 
 
 
@@ -132,6 +152,9 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllers();
+
+//SignalR
+app.MapHub<NotificationHub>("/NotificationHub");
 
 app.Run();
 
