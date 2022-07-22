@@ -7,7 +7,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="MailKit" Version="3.3.0" />
       <PackageReference Include="Microsoft.AspNet.WebApi.OData" Version="5.7.0" />
+      <PackageReference Include="MimeKit" Version="3.3.0" />
       <PackageReference Include="NETCore.MailKit" Version="2.1.0" />
     </ItemGroup>
 

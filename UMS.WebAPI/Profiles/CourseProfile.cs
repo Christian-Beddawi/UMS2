@@ -11,6 +11,6 @@ public class CourseProfile : Profile
     {
         CreateMap<CreateCourse, Course>()
             .ForPath(course => course.EnrolmentDateRange,
-                options => options.MapFrom(createCourse => new NpgsqlRange<DateOnly>(DateOnly.FromDateTime(createCourse.StartDate), DateOnly.FromDateTime(createCourse.EndDate))));
+                options => options.MapFrom(createCourse => new NpgsqlRange<DateOnly>(DateOnly.FromDateTime(createCourse.StartDate), DateOnly.FromDateTime(createCourse.EndDate)))).ReverseMap();
     }
 }

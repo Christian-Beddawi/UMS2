@@ -9,7 +9,6 @@ public class GetCoursesHandler : IRequestHandler<GetCoursesQuery,List<Domain.Mod
     private readonly umsContext _context = new umsContext();
     public async Task<List<Domain.Models.Course>> Handle(GetCoursesQuery request, CancellationToken cancellationToken)
     {
-        //Console.WriteLine("Course : " + _context.Courses);
         return _context.Courses.ToList();
         throw new NotImplementedException();
     }

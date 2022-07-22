@@ -1,17 +1,13 @@
 using MediatR;
+using UMS.WebAPI.DTO;
 
 namespace UMS.Application.ClassEnrollment.Commands;
 
 public class EnrollClassCommand : IRequest<string>
 {
-    public string CourseName;
-    public string TeacherName;
-    public int StudentId;
-
-    public EnrollClassCommand(string cName, string tName, int sId)
+    public EnrollClass EnrollmentInfo;
+    public EnrollClassCommand(EnrollClass enrollmentInfo)
     {
-        CourseName = cName;
-        TeacherName = tName;
-        StudentId = sId;
+        EnrollmentInfo = enrollmentInfo;
     }
 }
